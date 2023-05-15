@@ -19,7 +19,10 @@ public class SearchDevice {
         co.addArguments("--remote-allow-origins=*");
         System.setProperty("webdriver.chrome.driver", "C:\\IdeaProjects\\chromedriver.exe");
         this.driver = new ChromeDriver(co);
-        driver.get("https://www.amazon.com/");
+        driver.get("https://www.google.com/");
+        driver.findElement(By.cssSelector("#APjFqb")).sendKeys("Amazon");
+        driver.findElement(By.xpath("//body/div[1]/div[3]/form[1]/div[1]/div[1]/div[4]/center[1]/input[1]")).click();
+        driver.findElement(By.xpath("//h3[contains(text(),'Amazon.com. Spend less. Smile more.')]")).click();
         driver.manage().window().maximize();   //Browser setup and open homepage
     }
         @Test
